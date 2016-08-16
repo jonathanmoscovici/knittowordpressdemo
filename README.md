@@ -1,2 +1,2 @@
 # knittowordpressdemo
-an R Markdown instruction on how to publish R Markdown to Wordpress
+an instruction, written in R Markdown, on how to publish R Markdown to Wordpress.
