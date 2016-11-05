@@ -1,0 +1,30 @@
+---
+title: "Biostatistics Review Times"
+author: "Jonathan L. Moscovici"
+date: "November 5, 2016"
+output: html_document
+---
+
+It's always great to see new tools being implemented in everyday activities. Shiny Apps are a great way of allowing readers to interact with data and analysis. Recently, the editors of [Biostatistics] (https://jhubiostatistics.shinyapps.io/Biostatistics_Review_Times/) uploaded a Shiny app that [lets you examine the recent review times for manuscripts.](https://jhubiostatistics.shinyapps.io/Biostatistics_Review_Times/)
+
+
+
+
+```{r, eval=FALSE}
+install.packages("devtools")
+install.packages("RCurl")
+devtools:::install_github("duncantl/XMLRPC")
+devtools:::install_github("duncantl/RWordPress")
+```
+
+
+Great. Now run the following, replacing with your values for 'user', 'password', 'wordpressurl', 'yourmarkdownfile', and 'desired post title':
+
+```{r, eval=FALSE}
+library(RWordPress)
+options(WordpressLogin=c(user='password'),WordpressURL='https://user.wordpress.com/xmlrpc.php')
+library(knitr)
+knit2wp('yourmarkdownfile.Rmd',title="desired post title")
+```
+
+
