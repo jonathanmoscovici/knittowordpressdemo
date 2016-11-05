@@ -5,26 +5,23 @@ date: "November 5, 2016"
 output: html_document
 ---
 
-It's always great to see new tools being implemented in everyday activities. Shiny Apps are a great way of allowing readers to interact with data and analysis. Recently, the editors of [Biostatistics] (https://jhubiostatistics.shinyapps.io/Biostatistics_Review_Times/) uploaded a Shiny app that [lets you examine the recent review times for manuscripts.](https://jhubiostatistics.shinyapps.io/Biostatistics_Review_Times/)
+It's always great to see new analytic tools being used to describe everyday activities. Shiny Apps are a great way of allowing readers to interact with data and analysis. Recently, the co-editors of [Biostatistics] (http://biostatistics.oxfordjournals.org/), Jeff Leek and Dimitris Rizopoulos wrote a Shiny app that [lets you examine the recent review times for manuscripts.](https://jhubiostatistics.shinyapps.io/Biostatistics_Review_Times/). This way, you can see the up-to-date "review survival time" data to get an idea of how long your manuscript will take to review. Very cool idea!
+![](figures/blog1.png)
 
 
 
 
-```{r, eval=FALSE}
-install.packages("devtools")
-install.packages("RCurl")
-devtools:::install_github("duncantl/XMLRPC")
-devtools:::install_github("duncantl/RWordPress")
-```
-
-
-Great. Now run the following, replacing with your values for 'user', 'password', 'wordpressurl', 'yourmarkdownfile', and 'desired post title':
+<!--
+Code to publish to wordpress from R: replacing with your values for 'user', 'password', 'wordpressurl', 'yourmarkdownfile', and 'desired post title':
 
 ```{r, eval=FALSE}
+user<-user
+password<-pass
+wordpresslogin<-paste(user,"='",password,"'",sep="")
 library(RWordPress)
-options(WordpressLogin=c(user='password'),WordpressURL='https://user.wordpress.com/xmlrpc.php')
+options(WordpressLogin=c(user='password'),WordpressURL='http://www.jonathanmoscovici.com/xmlrpc.php')
 library(knitr)
-knit2wp('yourmarkdownfile.Rmd',title="desired post title")
+knit2wp('blog - Biostatistics review times.Rmd',title="Biostatistics Review Times")
 ```
-
+-->
 
